@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+body{
+  
+  
+}
+
+.row {
+  display: flex;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+.hed1{
+  text-align: center;
+  background-color: black;
+  color: white;
+ 
+  
+}
+.container{
+  background-color: black;
+  margin-right: 160px;
+  margin-left: 160px;
+  border: 1px solid #ddd;
+}
+.container2{
+  text-align: right;
+  border: 1px solid black;
+  border-bottom: none;
+  padding-left: 285px;
+  padding-right: 285px;
+}
+.container3{
+  text-align: right;
+  border: 1px solid black;
+   
+  padding-left: 285px;
+  padding-right: 285px;
+}
+.c1{
+  column-width: 80%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+
+}
+th{
+  background-color: black;
+  color: white;
+}
+.t2{
+  margin-right: 160px;
+  margin-left:160px; background-color: green;
+}
+th, td {
+  text-align: left;
+  border: 1px solid black;
+  
+
+}
+
+#txt{
+  text-align: right;
+}
+.yellow{
+  background-color: yellow;
+}
+.grey{
+  background-color: #C0C0C0;
+}
+.green{
+  background-color: green;
+}
+.th2{
+  background-color: green;
+  color: black;
+}
+.y2{
+  margin-top: 5px;
+}
+
+input{
+  border:none;
+}
+tr:nth-child(even) {
+  /*background-color: #f2f2f2;
+}*/
+</style>
+</head>
+<body>
+ <!--  <h2 class="hed1">Rate Calculator</h2>
+<div class="row"></div>
+<div class="col-md-10">
+<h4>Enter your miles per gallons:</h4>
+    </div>
+    <div class="col-md-2"><input type="number" id="lname" name="lname" value="Doe"></div>
+      
+    </div> -->
+  <section class="container-fluid">
+    <section class ="row justify-content-center">
+     <!--  <section class="col-12 col-sm-6 col-md-4">
+   -->
+
+<div class="container">
+  <h4 class="hed1">Rate Calculator</h4>
+
+   </div>
+   <div class="container2">
+<label for="txt"><h6>Enter your average miles per gallon:</h6>
+</label>
+<input class="yellow y2" type="text" id="txt1"><br>
+</div>
+<div class="container3">
+<label for="txt"><h6>Enter Current Gas Price:</h6>
+</label>
+<input class="yellow y2" type="text" id="txt2">
+
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <table>
+      <tr>
+        <th>1st Trip</th>
+        <th>Load #1</th>
+        <th>Load #2</th>
+      </tr>
+      <tr>
+        <td>Trip Miles</td>
+        <td class="yellow"><input class="yellow" type="number" id="tml1" name="tml1" value=""></td>
+        <td  class="yellow"><input class="yellow" type="number" id="tml2" name="tml2" value=""></td>
+      </tr>
+      <tr>
+        <td>Dead Head Pickup</td>
+        <td class="yellow"><input class="yellow" type="number" id="hpl1" name="hpl1" value=""></td>
+        <td class="yellow" ><input class="yellow" type="number" id="hpl2" name="hpl2" value=""></td>
+       
+        
+      </tr>
+      <tr>
+        <td>Dead Head Delivery</td>
+        <td class="yellow"><input class="yellow" type="number" id="hdl1" name="tdl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="hdl2" name="hdl2" value=""></td>
+      </tr>
+    
+       <tr>
+        <td>Total miles</td>
+         <td class="grey"><input class="grey" type="number"  id="tmr1" name="tmr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" c type="number" id="tmr2" name="tmr2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>Rate $</td>
+        <td class="yellow"><input class="yellow" type="text" id="rl1" name="rl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="text" id="rl2" name="rl2" value=""></td>
+      </tr>
+       <tr>
+        <td>Weight</td>
+        <td class="yellow"><input class="yellow" type="number" id="wl1" name="wl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="wl2" name="wl2" value=""></td>
+      </tr>
+      <tr>
+        <td>Fuel Reduction %</td>
+        <td class="grey"><input class="grey" type="number"  id="fr1" name="fr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="number" id="fr2" name="fr2" value="" readonly=""></td>
+      </tr>
+      
+      <tr>
+        <td>Fuel Cost $</td>
+        <td class="grey"><input class="grey" type="number"  id="fcr1" name="fcr1" value="" readonly=""></td>
+        <td class="grey"><input  class="grey" type="number" id="fcr2" name="fcr2" value="" readonly=""></td>
+      </tr>
+      
+       <tr>
+        <td>Days</td>
+        <td class="yellow"><input class="yellow" type="number" id="dl1" name="dl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="dl2" name="dl2" value=""></td>
+      </tr>
+      <tr>
+        <td>Rate Per Mile $</td>
+        <td class="grey"><input class="grey" type="number"  id="rpmr1" name="rpmr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="number" id="rpmr2" name="rpmr2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>True RPM $</td>
+        <td class="grey"><input class="grey" type="text"  id="trpm1" name="trpm1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="text" id="trpm2" name="trpm2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>True Day Rate $</td>
+        <td class="grey"><input class="grey" type="text"  id="tdr1" name="tdr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey"  type="text" id="tdr2" name="tdr2" value="" readonly=""></td>
+      </tr>
+       <tr>
+        <td>True  Rate $</td>
+        <td class="grey"><input class="grey"  type="text"  id="tr1" name="tr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="text" id="tr2" name="tr2" value="" readonly=""></td>
+      </tr>
+    </table>
+  </div>
+  <div class="column">
+    <table>
+      <tr>
+        <th>Backhaul</th>
+        <th>Load #1</th>
+        <th>Load #2</th>
+      </tr>
+           <tr>
+        <td>Trip Miles</td>
+        <td class="yellow"><input class="yellow" type="number" id="tml1l" name="tml1" value=""></td>
+        <td  class="yellow"><input class="yellow" type="number" id="tml2l" name="tml2" value=""></td>
+      </tr>
+      <tr>
+        <td>Dead Head Pickup</td>
+        <td class="yellow"><input class="yellow" type="number" id="hpl1l" name="hpl1" value=""></td>
+        <td class="yellow" ><input class="yellow" type="number" id="hpl2l" name="hpl2" value=""></td>
+       
+      </tr>
+      <tr>
+        <td>Dead Head Delivery</td>
+        <td class="yellow"><input class="yellow" type="number" id="hdl1l" name="tdl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="hdl2l" name="hdl2" value=""></td>
+      </tr>
+    
+       <tr>
+        <td>Total miles</td>
+         <td class="grey"><input class="grey" type="number"  id="tmr1l" name="tmr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" c type="number" id="tmr2l" name="tmr2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>Rate $</td>
+        <td class="yellow"><input class="yellow" type="text" id="rl1l" name="rl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="text" id="rl2l" name="rl2" value=""></td>
+      </tr>
+       <tr>
+        <td>Weight</td>
+        <td class="yellow"><input class="yellow" type="number" id="wl1l" name="wl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="wl2l" name="wl2" value=""></td>
+      </tr>
+      <tr>
+        <td>Fuel Reduction %</td>
+        <td class="grey"><input class="grey" type="number"  id="fr1l" name="fr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="number" id="fr2l" name="fr2" value="" readonly=""></td>
+      </tr>
+      
+      <tr>
+        <td>Fuel Cost $</td>
+        <td class="grey"><input class="grey" type="number"  id="fcr1l" name="fcr1" value="" readonly=""></td>
+        <td class="grey"><input  class="grey" type="number" id="fcr2l" name="fcr2" value="" readonly=""></td>
+      </tr>
+      
+       <tr>
+        <td>Days</td>
+        <td class="yellow"><input class="yellow" type="number" id="dl1l" name="dl1" value=""></td>
+        <td class="yellow"><input class="yellow" type="number" id="dl2l" name="dl2" value=""></td>
+      </tr>
+      <tr>
+        <td>Rate Per Mile $</td>
+        <td class="grey"><input class="grey" type="text"  id="rpmr1l" name="rpmr1" value="" ></td>
+        <td class="grey"><input class="grey" type="text" id="rpmr2l" name="rpmr2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>True RPM $</td>
+        <td class="grey"><input class="grey" type="text"  id="trpm1l" name="trpm1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="text" id="trpm2l" name="trpm2" value="" readonly=""></td>
+      </tr>
+      <tr>
+        <td>True Day Rate $</td>
+        <td class="grey"><input class="grey" type="text"  id="tdr1l" name="tdr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey"  type="text" id="tdr2l" name="tdr2" value="" readonly=""></td>
+      </tr>
+       <tr>
+        <td>True  Rate $</td>
+        <td class="grey"><input class="grey"  type="text"  id="tr1l" name="tr1" value="" readonly=""></td>
+        <td class="grey"><input class="grey" type="text" id="tr2l" name="tr2" value="" readonly=""></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<table class="t2">
+  <tr>
+    <th class="th2">Total Rate Per Mile $</th>
+    <th class="th2">Total Rate Per Day $</th>
+    <th class="th2">Total Rate $</th>
+  </tr>
+   <tr>
+    <th class="th2"><input class="green" type="text"  id="tdrr1" name="trpm" value="" readonly=""></th>
+    <th class="th2"><input class="green" type="text"  id="tdrr2" name="trpd" value="" readonly=""></th>
+    <th class="th2"><input class="green" type="text"  id="tdrr3" name="tr" value="" readonly=""></th>
+  </tr>
+</table>
+
+</section>
+  </section>
+
+
+
+
+  <script type="text/javascript">
+    
+
+
+        document.getElementById("hdl1").addEventListener("input", TotalMiles1);
+        document.getElementById("hdl2").addEventListener("input", TotalMiles2);
+        document.getElementById("tml1").addEventListener("input", TotalMiles1);
+        document.getElementById("tml2").addEventListener("input", TotalMiles2);
+        document.getElementById("hpl1").addEventListener("input", TotalMiles1);
+        document.getElementById("hpl2").addEventListener("input", TotalMiles2);
+
+        document.getElementById("wl1").addEventListener("input", FuelReduction1);
+        document.getElementById("wl2").addEventListener("input", FuelReduction2);
+
+        document.getElementById("fr1").addEventListener("input", FuelCost1);
+        document.getElementById("fr2").addEventListener("input", FuelCost2);
+         document.getElementById("txt1").addEventListener("input", FuelCost1);
+        document.getElementById("txt2").addEventListener("input", FuelCost1);
+         document.getElementById("txt1").addEventListener("input", FuelCost2);
+        document.getElementById("txt2").addEventListener("input", FuelCost2);
+
+        document.getElementById("fcr1").addEventListener("input", TrueRate1);
+        document.getElementById("fcr2").addEventListener("input", TrueRate2);
+
+        document.getElementById("rl1").addEventListener("input", RatePerMile1);
+        document.getElementById("rl2").addEventListener("input", RatePerMile2);
+
+
+        document.getElementById("tr1").addEventListener("input", TrueDayRate1);
+        document.getElementById("tr2").addEventListener("input", TrueDayRate2);
+        document.getElementById("dl1").addEventListener("input", TrueDayRate1);
+        document.getElementById("dl2").addEventListener("input", TrueDayRate2);
+
+        document.getElementById("tr1").addEventListener("input", RPM1);
+        document.getElementById("tr2").addEventListener("input", RPM2);
+        function TotalMiles1() {
+          
+        var TripMiles1 = parseInt(document.getElementById("tml1").value);
+        var DeadPick1 = parseInt(document.getElementById("hpl1").value);
+        var DeadDel1 = parseInt(document.getElementById("hdl1").value);
+        var Totalmiles1 = TripMiles1 + DeadPick1 + DeadDel1;
+         // var avg1 = Totalmiles1.toFixed(2);
+        document.getElementById("tmr1").value=Totalmiles1;
+        RatePerMile1();
+        RPM1();
+        
+        
+  
+}
+ function TotalMiles2() {
+        var TripMiles2 = parseInt(document.getElementById("tml2").value);
+        var DeadPick2 = parseInt(document.getElementById("hpl2").value);
+        var DeadDel2 = parseInt(document.getElementById("hdl2").value);
+        var Totalmiles2 = TripMiles2 + DeadPick2 + DeadDel2;
+        // var avg1 = Totalmiles2.toFixed(2);
+        document.getElementById("tmr2").value=Totalmiles2;
+        RPM2();
+        RatePerMile2();
+      }
+function FuelReduction1() {
+        var weight1 = parseInt(document.getElementById("wl1").value);
+        
+        var Fuelreduction1 = (weight1/1000)*0.005;
+        var avg1 = Fuelreduction1.toFixed(2);
+        document.getElementById("fr1").value=avg1;
+        FuelCost1();
+  
+}
+function FuelReduction2() {
+        var weight2 = parseInt(document.getElementById("wl2").value);
+        
+        var Fuelreduction2 = (weight2/1000)*0.005;
+          var avg1 = Fuelreduction2.toFixed(2);
+         document.getElementById("fr2").value=avg1;
+        
+        FuelCost2();
+        
+  
+  
+  
+}
+
+function FuelCost1() {
+           
+        var mpg = parseFloat(document.getElementById("txt1").value);
+        var gp = parseFloat(document.getElementById("txt2").value);
+        var tm = parseFloat(document.getElementById("tmr1").value);
+        var fr = parseFloat(document.getElementById("fr1").value);
+        var Fuelcost1 = tm/(mpg*(1-fr))*gp;
+        var avg1 = Fuelcost1.toFixed(2);
+        document.getElementById("fcr1").value=avg1;
+        TrueRate1();
+        
+  
+}
+function FuelCost2() {
+           
+        var mpg = parseFloat(document.getElementById("txt1").value);
+        var gp = parseFloat(document.getElementById("txt2").value);
+        var tm = parseFloat(document.getElementById("tmr2").value);
+        var fr = parseFloat(document.getElementById("fr2").value);
+        var Fuelcost2 = tm/(mpg*(1-fr))*gp;
+        var avg1 = Fuelcost2.toFixed(2);
+        document.getElementById("fcr2").value=avg1;
+        TrueRate2();
+        }
+function TrueRate1(){
+
+       var rate=parseFloat(document.getElementById("rl1").value);
+       var  fuelcost=parseFloat(document.getElementById("fcr1").value);
+       var Truerate1 =rate - fuelcost;
+     var avg1 = Truerate1.toFixed(2);
+      document.getElementById("tr1").value=avg1;
+
+      TrueDayRate1();
+      RPM1();
+      TotalRate();
+}
+function TrueRate2(){
+
+       var rate=parseFloat(document.getElementById("rl2").value);
+       var  fuelcost=parseFloat(document.getElementById("fcr2").value);
+       var Truerate2 =rate - fuelcost;
+     var avg1 = Truerate2.toFixed(2);
+      document.getElementById("tr2").value=avg1;
+      TrueDayRate2();
+      RPM2();
+      TotalRate();
+      
+
+}
+
+function RatePerMile1(){
+  
+        var rate=(document.getElementById("rl1").value);
+
+        var tmiles=(document.getElementById("tmr1").value);
+       
+        var Ratepermile = parseFloat(rate / tmiles);
+        var avg1 = Ratepermile.toFixed(2);
+      document.getElementById("rpmr1").value=avg1;
+
+
+}
+function RatePerMile2(){
+  
+        var rate=(document.getElementById("rl2").value);
+
+        var tmiles=(document.getElementById("tmr2").value);
+       
+        var Ratepermile = parseFloat(rate / tmiles);
+        var avg1 = Ratepermile.toFixed(2);
+      document.getElementById("rpmr2").value=avg1;
+
+
+}
+// jsafwjashkkfnma/lkdxbj.cvxaklsdaj
+
+
+function TrueDayRate1(){
+       var truerate=parseFloat(document.getElementById("tr1").value);
+       var day=parseFloat(document.getElementById("dl1").value);
+       var truedayrate1= truerate / day;
+       var avg1 = truedayrate1.toFixed(2);
+       document.getElementById("tdr1").value=avg1;
+       TotalRatePerDay();
+
+}
+
+// function TrueDayRate1(){
+//        var truerate=parseFloat(document.getElementById("tr1").value);
+//        var day=parseFloat(document.getElementById("dl1").value);
+//        var truedayrate1= truerate / day;
+//        document.getElementById("tdr1").value=truedayrate1;
+
+// }
+function TrueDayRate2(){
+       var truerate=parseFloat(document.getElementById("tr2").value);
+       var day=parseFloat(document.getElementById("dl2").value);
+       var truedayrate2= truerate / day;
+       var avg1 = truedayrate2.toFixed(2);
+       document.getElementById("tdr2").value=avg1;
+       TotalRatePerDay();
+
+}
+ 
+ function RPM1(){
+      var  tr=parseFloat(document.getElementById("tr1").value);
+      var  tm=parseFloat(document.getElementById("tmr1").value);
+      var rpm1= tr / tm;
+      var avg1 = rpm1.toFixed(2);
+
+      document.getElementById("trpm1").value=avg1;
+      TotalRatePerMile();
+ }
+function RPM2(){
+      var  tr=parseFloat(document.getElementById("tr2").value);
+      var  tm=parseFloat(document.getElementById("tmr2").value);
+      var rpm2= tr / tm;
+      var avg1 = rpm2.toFixed(2);
+
+      document.getElementById("trpm2").value=avg1;
+      TotalRatePerMile();
+ }
+
+
+
+
+
+
+
+
+        document.getElementById("hdl1l").addEventListener("input", TotalMiles1l);
+        document.getElementById("hdl2l").addEventListener("input", TotalMiles2l);
+        document.getElementById("tml1l").addEventListener("input", TotalMiles1l);
+        document.getElementById("tml2l").addEventListener("input", TotalMiles2l);
+        document.getElementById("hpl1l").addEventListener("input", TotalMiles1l);
+        document.getElementById("hpl2l").addEventListener("input", TotalMiles2l);
+
+        document.getElementById("wl1l").addEventListener("input", FuelReduction1l);
+        document.getElementById("wl2l").addEventListener("input", FuelReduction2l);
+
+        document.getElementById("fr1l").addEventListener("input", FuelCost1l);
+        document.getElementById("fr1l").addEventListener("input", FuelCost2l);
+         document.getElementById("txt1").addEventListener("input", FuelCost1l);
+        document.getElementById("txt2").addEventListener("input", FuelCost1l);
+         document.getElementById("txt1").addEventListener("input", FuelCost2l);
+        document.getElementById("txt2").addEventListener("input", FuelCost2l);
+
+        document.getElementById("fcr1l").addEventListener("input", TrueRate1l);
+        document.getElementById("fcr2l").addEventListener("input", TrueRate2l);
+
+        document.getElementById("rl1l").addEventListener("input", RatePerMile1l);
+        document.getElementById("rl2l").addEventListener("input", RatePerMile2l);
+
+        document.getElementById("tr1l").addEventListener("input", TrueDayRate1l);
+        document.getElementById("tr2l").addEventListener("input", TrueDayRate2l);
+        document.getElementById("dl1l").addEventListener("input", TrueDayRate1l);
+        document.getElementById("dl2l").addEventListener("input", TrueDayRate2l);
+
+        document.getElementById("tr1l").addEventListener("input", RPM1l);
+        document.getElementById("tr2l").addEventListener("input", RPM2l);
+        function TotalMiles1l() {
+          // alert("this is a message");
+        var TripMiles1 = parseInt(document.getElementById("tml1l").value);
+        var DeadPick1 = parseInt(document.getElementById("hpl1l").value);
+        var DeadDel1 = parseInt(document.getElementById("hdl1l").value);
+        var Totalmiles1 = TripMiles1 + DeadPick1 + DeadDel1;
+         // alert("this is a very  message");
+        document.getElementById("tmr1l").value=Totalmiles1;
+        RatePerMile1l();
+        RPM1l();
+        // alert("this is a good message");
+        
+  
+}
+ function TotalMiles2l() {
+        var TripMiles2 = parseInt(document.getElementById("tml2l").value);
+        var DeadPick2 = parseInt(document.getElementById("hpl2l").value);
+        var DeadDel2 = parseInt(document.getElementById("hdl2l").value);
+        var Totalmiles2 = TripMiles2 + DeadPick2 + DeadDel2;
+
+        document.getElementById("tmr2l").value=Totalmiles2;
+        RPM2l();
+        RatePerMile2l()
+      }
+function FuelReduction1l() {
+        var weight1 = parseInt(document.getElementById("wl1l").value);
+        
+        var Fuelreduction1 = (weight1/1000)*0.005;
+         var avg1 = Fuelreduction1.toFixed(2);
+        document.getElementById("fr1l").value=avg1;
+        FuelCost1l();
+  
+}
+function FuelReduction2l() {
+        var weight2 = parseInt(document.getElementById("wl2l").value);
+        
+        var Fuelreduction2 = (weight2/1000)*0.005;
+        var avg1 = Fuelreduction2.toFixed(2);
+         document.getElementById("fr2l").value=avg1;
+        
+        FuelCost2l();
+        
+  
+  
+  
+}
+
+function FuelCost1l() {
+           
+        var mpg = parseFloat(document.getElementById("txt1").value);
+        var gp = parseFloat(document.getElementById("txt2").value);
+        var tm = parseFloat(document.getElementById("tmr1l").value);
+        var fr = parseFloat(document.getElementById("fr1l").value);
+        var Fuelcost1 = tm/(mpg*(1-fr))*gp;
+        var avg1 = Fuelcost1.toFixed(2);
+        document.getElementById("fcr1l").value=avg1;
+        TrueRate1l();
+        
+  
+}
+function FuelCost2l() {
+           
+        var mpg = parseFloat(document.getElementById("txt1").value);
+        var gp = parseFloat(document.getElementById("txt2").value);
+        var tm = parseFloat(document.getElementById("tmr2l").value);
+        var fr = parseFloat(document.getElementById("fr2l").value);
+        var Fuelcost2 = tm/(mpg*(1-fr))*gp;
+       var avg1 = Fuelcost2.toFixed(2);
+        document.getElementById("fcr2l").value=avg1;
+        TrueRate2l();
+        }
+function TrueRate1l(){
+
+       var rate=parseFloat(document.getElementById("rl1l").value);
+       var  fuelcost=parseFloat(document.getElementById("fcr1l").value);
+       var Truerate1 =rate - fuelcost;
+      var avg1 = Truerate1.toFixed(2);
+      document.getElementById("tr1l").value=avg1;
+
+      TrueDayRate1l();
+      RPM1l();
+      TotalRate();
+}
+function TrueRate2l(){
+
+       var rate=parseFloat(document.getElementById("rl2l").value);
+       var  fuelcost=parseFloat(document.getElementById("fcr2l").value);
+       var Truerate2 =rate - fuelcost;
+      var avg1 = Truerate2.toFixed(2);
+      document.getElementById("tr2l").value=avg1;
+      TrueDayRate2l();
+      RPM2l();
+      TotalRate();
+      
+
+}
+
+function RatePerMile1l(){
+  
+        var rate=(document.getElementById("rl1l").value);
+
+        var tmiles=(document.getElementById("tmr1l").value);
+        
+        var Ratepermile = parseFloat(rate / tmiles);
+       var avg1 = Ratepermile.toFixed(2);
+      document.getElementById("rpmr1l").value=avg1;
+
+
+
+}
+function RatePerMile2l(){
+  
+        var rate=(document.getElementById("rl1l").value);
+
+        var tmiles=(document.getElementById("tmr1l").value);
+        
+        var Ratepermile = parseFloat(rate / tmiles);
+       var avg1 = Ratepermile.toFixed(2);
+      document.getElementById("rpmr2l").value=avg1;
+
+
+
+}
+
+
+
+function TrueDayRate1l(){
+       var truerate=parseFloat(document.getElementById("tr1l").value);
+       var day=parseFloat(document.getElementById("dl1l").value);
+       var truedayrate1= truerate / day;
+       var avg1 = truedayrate1.toFixed(2);
+       document.getElementById("tdr1l").value=avg1;
+       TotalRatePerDay();
+
+}
+
+// function TrueDayRate1(){
+//        var truerate=parseFloat(document.getElementById("tr1l").value);
+//        var day=parseFloat(document.getElementById("dl1l").value);
+//        var truedayrate1= truerate / day;
+//        document.getElementById("tdr1l").value=truedayrate1;
+
+// }
+function TrueDayRate2l(){
+       var truerate=parseFloat(document.getElementById("tr2l").value);
+       var day=parseFloat(document.getElementById("dl2l").value);
+       var truedayrate2= truerate / day;
+       var avg1 = truedayrate2.toFixed(2);
+       document.getElementById("tdr2l").value=avg1;
+       TotalRatePerDay();
+
+}
+ 
+ function RPM1l(){
+      var  tr=parseFloat(document.getElementById("tr1l").value);
+      var  tm=parseFloat(document.getElementById("tmr1l").value);
+      var rpm1= tr / tm;
+      var avg1 = rpm1.toFixed(2);
+      document.getElementById("trpm1l").value=avg1;
+      TotalRatePerMile();
+ }
+function RPM2l(){
+      var  tr=parseFloat(document.getElementById("tr2l").value);
+      var  tm=parseFloat(document.getElementById("tmr2l").value);
+      var rpm2= tr / tm;
+      var avg1 = rpm2.toFixed(2);
+      document.getElementById("trpm2l").value=avg1;
+      TotalRatePerMile();
+ }
+
+
+document.getElementById("trpm1").addEventListener("input", TotalRatePerMile);
+document.getElementById("tdr1").addEventListener("input", TotalRatePerDay);
+document.getElementById("tr1").addEventListener("input", TotalRate);
+
+     function TotalRatePerMile(){
+      var  rpm1=parseFloat(document.getElementById("trpm1").value);
+      var  rpm2=parseFloat(document.getElementById("trpm2").value);
+      var  max1=parseFloat(Math.max(rpm1, rpm2));
+      var  rpm1l=parseFloat(document.getElementById("trpm1l").value);
+      var  rpm2l=parseFloat(document.getElementById("trpm2l").value);
+      var  max2=parseFloat(Math.max(rpm1l, rpm2l));
+       var avg = parseFloat((max1+max2)/2);
+      var avg1 = avg.toFixed(2);
+      document.getElementById("tdrr1").value=avg1;
+     }
+     function TotalRatePerDay(){
+      var  rpm1=parseFloat(document.getElementById("tdr1").value);
+      var  rpm2=parseFloat(document.getElementById("tdr2").value);
+      var  max1=parseFloat(Math.max(rpm1, rpm2));
+      var  rpm1l=parseFloat(document.getElementById("tdr1l").value);
+      var  rpm2l=parseFloat(document.getElementById("tdr2l").value);
+      var  max2=parseFloat(Math.max(rpm1l, rpm2l));
+       var avg = parseFloat((max1+max2)/2);
+      var avg1 = avg.toFixed(2);
+      document.getElementById("tdrr2").value=avg1;
+     }
+     function TotalRate(){
+      var  rpm1=parseFloat(document.getElementById("tr1").value);
+      var  rpm2=parseFloat(document.getElementById("tr2").value);
+      var  max1=parseFloat(Math.max(rpm1, rpm2));
+      var  rpm1l=parseFloat(document.getElementById("tr1l").value);
+      var  rpm2l=parseFloat(document.getElementById("tr2l").value);
+      var  max2=parseFloat(Math.max(rpm1l, rpm2l));
+       var avg = parseFloat((max1+max2)/2);
+       var avg1 = avg.toFixed(2);
+      document.getElementById("tdrr3").value=avg1;
+     }
+
+  </script>
+</body>
+</html>
